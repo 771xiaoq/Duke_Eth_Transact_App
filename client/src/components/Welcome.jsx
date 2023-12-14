@@ -9,6 +9,17 @@ import { Loader } from ".";
 
 const companyCommonStyles = "min-h-[70px] sm:px-0 px-2 sm:min-w-[120px] flex justify-center items-center border-[0.5px] border-gray-400 text-sm font-light text-white";
 
+/**
+ * Input component.
+ *
+ * @param {Object} props - The component props.
+ * @param {string} props.placeholder - The input placeholder.
+ * @param {string} props.name - The input name.
+ * @param {string} props.type - The input type.
+ * @param {string} props.value - The input value.
+ * @param {Function} props.handleChange - The input change event handler.
+ * @returns {JSX.Element} The input element.
+ */
 const Input = ({ placeholder, name, type, value, handleChange }) => (
   <input
     placeholder={placeholder}

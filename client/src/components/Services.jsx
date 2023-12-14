@@ -3,6 +3,15 @@ import { BsShieldFillCheck } from "react-icons/bs";
 import { BiSearchAlt } from "react-icons/bi";
 import { RiHeart2Fill } from "react-icons/ri";
 
+/**
+ * Represents a service card component.
+ * @param {Object} props - The props for the ServiceCard component.
+ * @param {string} props.color - The background color of the service card.
+ * @param {string} props.title - The title of the service.
+ * @param {ReactNode} props.icon - The icon for the service.
+ * @param {string} props.subtitle - The subtitle of the service.
+ * @returns {JSX.Element} The rendered ServiceCard component.
+ */
 const ServiceCard = ({ color, title, icon, subtitle }) => (
   <div className="flex flex-row justify-start items-start white-glassmorphism p-3 m-2 cursor-pointer hover:shadow-xl">
     <div className={`w-10 h-10 rounded-full flex justify-center items-center ${color}`}>
@@ -17,6 +26,10 @@ const ServiceCard = ({ color, title, icon, subtitle }) => (
   </div>
 );
 
+/**
+ * Represents the Services component.
+ * @returns {JSX.Element} The rendered Services component.
+ */
 const Services = () => (
   <div className="flex w-full justify-center items-center gradient-bg-services">
     <div className="flex mf:flex-row flex-col items-center justify-between md:p-20 py-12 px-4">

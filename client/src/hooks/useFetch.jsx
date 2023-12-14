@@ -2,9 +2,20 @@ import { useEffect, useState } from 'react';
 
 const API_KEY = 'OgXG1HdDWaoUxhSuSlIJJybKBRurMLbW'
 
+
+/**
+ * Custom hook for fetching GIFs from the Giphy API based on a keyword.
+ * @param {Object} options - The options for the hook.
+ * @param {string} options.keyword - The keyword to search for GIFs.
+ * @returns {string} The URL of the fetched GIF.
+ */
 const useFetch = ({ keyword }) => {
     const[gifUrl, setGifUrl] = useState('');
 
+    /**
+     * Fetches GIFs from the Giphy API based on a keyword.
+     * @returns {Promise<void>} A Promise that resolves when the GIFs are fetched.
+     */
     const fetchGifs = async () => {
         try {
             const response = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=${API_KEY}&q=${keyword.split(' ').join('')}&limit=1`)

@@ -1,12 +1,19 @@
+/**
+ * @file Provides a context for managing transactions.
+ * @module TransactionContext
+ * @exports TransactionContext
+ * @exports TransactionsProvider
+ */
+
 import React, { useEffect, useState } from "react";
 import { ethers } from "ethers";
 
 import { contractABI, contractAddress } from "../utils/constants";
 
-export const TransactionContext = React.createContext();
-
-const { ethereum } = window;
-
+/**
+ * Creates an Ethereum contract instance.
+ * @returns {Object} The Ethereum contract instance.
+ */
 const createEthereumContract = () => {
   const provider = new ethers.providers.Web3Provider(ethereum);
   const signer = provider.getSigner();
@@ -190,3 +197,5 @@ export const TransactionsProvider = ({ children }) => {
     </TransactionContext.Provider>
   );
 };
+
+export const TransactionContext = React.createContext();

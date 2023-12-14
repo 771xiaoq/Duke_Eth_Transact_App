@@ -6,6 +6,17 @@ import useFetch from "../hooks/useFetch";
 import dummyData from "../utils/dummyData";
 import { shortenAddress } from "../utils/shortenAddress";
 
+/**
+ * Renders a card displaying transaction details.
+ * @param {string} addressTo - The recipient's address.
+ * @param {string} addressFrom - The sender's address.
+ * @param {string} timestamp - The timestamp of the transaction.
+ * @param {string} message - The optional message attached to the transaction.
+ * @param {string} keyword - The keyword used for fetching a GIF.
+ * @param {number} amount - The amount of ETH transferred in the transaction.
+ * @param {string} url - The URL of the image to display.
+ * @returns {JSX.Element} The TransactionsCard component.
+ */
 const TransactionsCard = ({ addressTo, addressFrom, timestamp, message, keyword, amount, url }) => {
   const gifUrl = useFetch({ keyword });
 
@@ -47,6 +58,10 @@ const TransactionsCard = ({ addressTo, addressFrom, timestamp, message, keyword,
   );
 };
 
+/**
+ * Renders the Transactions component.
+ * @returns {JSX.Element} The Transactions component.
+ */
 const Transactions = () => {
   const { transactions, currentAccount } = useContext(TransactionContext);
 
